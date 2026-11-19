@@ -1,0 +1,108 @@
+{
+  "profile": "portrait-five.native-catalog/1",
+  "checkedAt": "2026-11-19",
+  "resolution": "1080x1920",
+  "fps": 60,
+  "templates": {
+    "modern": {
+      "id": 606,
+      "slug": "template-01-integrated-portrait",
+      "name": "现代图文",
+      "version": "2.7.18-alpha.15",
+      "repository": "https://github.com/motiontemplates/314486",
+      "download": "https://motiongit.com/adunext/template-01-integrated-portrait",
+      "groups": 26,
+      "nativeStatus": "historical-native-sample-verified",
+      "componentWorkflow": "motion-kit",
+      "acceptedVersions": [
+        "2.7.18-alpha.15",
+        "2.7.18-alpha.14"
+      ],
+      "nativeVersions": {
+        "2.7.18-alpha.15": "environment-check-failed",
+        "2.7.18-alpha.14": "native-summary-sample-verified"
+      },
+      "recommendedNativeVersion": "2.7.18-alpha.14"
+    },
+    "paper": {
+      "id": 608,
+      "slug": "template-02-expanded-portrait",
+      "name": "纸面透视",
+      "version": "2.7.18-alpha.15",
+      "repository": "https://github.com/motiontemplates/295450",
+      "download": "https://motiongit.com/adunext/template-02-expanded-portrait",
+      "groups": 41,
+      "nativeStatus": "historical-native-sample-verified",
+      "componentWorkflow": "motion-kit",
+      "acceptedVersions": [
+        "2.7.18-alpha.15",
+        "2.7.18-alpha.14"
+      ],
+      "nativeVersions": {
+        "2.7.18-alpha.15": "environment-check-failed",
+        "2.7.18-alpha.14": "selected-native-groups-verified"
+      },
+      "recommendedNativeVersion": "2.7.18-alpha.14"
+    },
+    "dark": {
+      "id": 610,
+      "slug": "template-03-native-portrait",
+      "name": "深色立体",
+      "version": "2.7.18-alpha.15",
+      "repository": "https://github.com/motiontemplates/569615",
+      "download": "https://motiongit.com/adunext/template-03-native-portrait",
+      "groups": 14,
+      "nativeStatus": "historical-native-sample-verified",
+      "componentWorkflow": "motion-kit",
+      "acceptedVersions": [
+        "2.7.18-alpha.15",
+        "2.7.18-alpha.14"
+      ],
+      "nativeVersions": {
+        "2.7.18-alpha.15": "environment-check-failed",
+        "2.7.18-alpha.14": "native-summary-sample-verified"
+      },
+      "recommendedNativeVersion": "2.7.18-alpha.14"
+    },
+    "poster": {
+      "id": 624,
+      "slug": "vibrant-poster-portrait",
+      "name": "活力海报",
+      "version": "2.7.18-alpha.8",
+      "repository": "https://github.com/motiontemplates/721489",
+      "download": "https://motiongit.com/adunext/vibrant-poster-portrait",
+      "groups": 25,
+      "nativeStatus": "historical-native-sample-verified",
+      "componentWorkflow": "poster-kit",
+      "acceptedVersions": [
+        "2.7.18-alpha.8",
+        "2.7.18-alpha.7"
+      ],
+      "nativeVersions": {
+        "2.7.18-alpha.8": "environment-check-failed",
+        "2.7.18-alpha.7": "selected-native-groups-verified"
+      },
+      "recommendedNativeVersion": "2.7.18-alpha.7"
+    },
+    "character": {
+      "id": 614,
+      "slug": "template-05-native-portrait",
+      "name": "鲜色角色",
+      "version": "2.7.18-alpha.15",
+      "repository": "https://github.com/motiontemplates/293151",
+      "download": "https://motiongit.com/adunext/template-05-native-portrait",
+      "groups": 19,
+      "nativeStatus": "historical-native-sample-verified",
+      "componentWorkflow": "motion-kit",
+      "acceptedVersions": [
+        "2.7.18-alpha.15",
+        "2.7.18-alpha.14"
+      ],
+      "nativeVersions": {
+        "2.7.18-alpha.15": "environment-check-failed",
+        "2.7.18-alpha.14": "selected-native-groups-verified"
+      },
+      "recommendedNativeVersion": "2.7.18-alpha.14"
+    }
+  }
+}

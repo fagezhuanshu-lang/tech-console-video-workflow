@@ -1,0 +1,4 @@
+# This repository's Python wrapper uses only the Python 3.12+ standard library.
+# The verified personal .motion package installs its own pinned rendering dependencies
+# through scripts/bootstrap.py setup or the renderer's official setup stage.
+# Do not pip-install unpublished template internals or copy another user's environment.

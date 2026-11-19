@@ -1,0 +1,179 @@
+{
+  "media": {
+    "talk": "talk-with-outro.mp4",
+    "captions": "captions.json"
+  },
+  "brief": {
+    "schema": "adu-auto-brief/1",
+    "brand": "科技口播",
+    "layout": "portrait",
+    "narrationDuration": 12.8,
+    "allowedStyles": [
+      "06-A"
+    ],
+    "fontPolicy": "preferred",
+    "repairPolicy": {
+      "mode": "off"
+    },
+    "presenterLabel": "口播现场",
+    "contentEvidence": {
+      "schema": "adu-content-evidence/1",
+      "text": "马斯克曾说2026年是AI全面普及的起点不是某个技术突破而是交互革命的铺开很多人觉得遥远但国产AI的行动来得更快",
+      "textSha256": "f0db480348f7ffdf6812fbf852320bf4c43cb7e4acd1ed269c20836236283bd4",
+      "sourceKind": "Actual narration with ASR word times",
+      "units": [
+        {
+          "id": "f0db480348f7ffdf:0:37",
+          "start": 0,
+          "end": 37,
+          "text": "马斯克曾说2026年是AI全面普及的起点不是某个技术突破而是交互革命的铺开"
+        },
+        {
+          "id": "f0db480348f7ffdf:37:56",
+          "start": 37,
+          "end": 56,
+          "text": "很多人觉得遥远但国产AI的行动来得更快"
+        }
+      ]
+    },
+    "segments": [
+      {
+        "id": "part-1",
+        "text": "马斯克曾说2026年是AI全面普及的起点不是某个技术突破而是交互革命的铺开",
+        "intent": "check-glitch",
+        "phases": [],
+        "counts": {
+          "labels": 10
+        },
+        "durationFrames": 440,
+        "anchors": {
+          "entry": {
+            "frame": 0
+          }
+        },
+        "ownershipRefs": [
+          "f0db480348f7ffdf:0:37"
+        ],
+        "supportingRefs": {
+          "labels.0": [
+            "f0db480348f7ffdf:0:37"
+          ],
+          "labels.1": [
+            "f0db480348f7ffdf:0:37"
+          ],
+          "labels.2": [
+            "f0db480348f7ffdf:0:37"
+          ],
+          "labels.3": [
+            "f0db480348f7ffdf:0:37"
+          ],
+          "labels.4": [
+            "f0db480348f7ffdf:0:37"
+          ],
+          "labels.5": [
+            "f0db480348f7ffdf:0:37"
+          ],
+          "labels.6": [
+            "f0db480348f7ffdf:0:37"
+          ],
+          "labels.7": [
+            "f0db480348f7ffdf:0:37"
+          ],
+          "labels.8": [
+            "f0db480348f7ffdf:0:37"
+          ],
+          "labels.9": [
+            "f0db480348f7ffdf:0:37"
+          ]
+        },
+        "preferredScenes": [
+          "06-A:check-glitch"
+        ],
+        "candidates": {
+          "06-A:check-glitch": {
+            "inputs": {
+              "labels": [
+                "交互革命",
+                "本期口播",
+                "2026年",
+                "AI",
+                "全面普及",
+                "起点",
+                "技术突破？",
+                "动效计数",
+                "交互革命的铺开",
+                "马斯克曾说"
+              ],
+              "grainTexture": "grain.png",
+              "videos": {
+                "dh_pres": "presenter.mp4"
+              }
+            },
+            "slots": {}
+          }
+        }
+      },
+      {
+        "id": "part-2",
+        "text": "很多人觉得遥远但国产AI的行动来得更快",
+        "intent": "making-card",
+        "phases": [],
+        "counts": {
+          "labels": 3
+        },
+        "durationFrames": 328,
+        "anchors": {
+          "entry": {
+            "frame": 0
+          }
+        },
+        "ownershipRefs": [
+          "f0db480348f7ffdf:37:56"
+        ],
+        "supportingRefs": {
+          "labels.0": [
+            "f0db480348f7ffdf:37:56"
+          ],
+          "labels.1": [
+            "f0db480348f7ffdf:37:56"
+          ],
+          "labels.2": [
+            "f0db480348f7ffdf:37:56"
+          ]
+        },
+        "preferredScenes": [
+          "06-A:making-card"
+        ],
+        "candidates": {
+          "06-A:making-card": {
+            "inputs": {
+              "labels": [
+                "很多人",
+                "觉得遥远",
+                "但国产AI的行动来得更快"
+              ],
+              "grainTexture": "grain.png"
+            },
+            "slots": {}
+          }
+        }
+      }
+    ],
+    "music": {
+      "mode": "none"
+    },
+    "faceTracking": {
+      "mode": "fixed",
+      "cx": 0.48,
+      "cy": 0.41,
+      "h": 0.34
+    }
+  },
+  "header": {
+    "shortTitle": "AI 交互革命",
+    "source": {
+      "kind": "assistant-summary",
+      "field": "brief.contentEvidence.text"
+    }
+  }
+}

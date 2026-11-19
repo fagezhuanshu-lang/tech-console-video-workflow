@@ -1,0 +1,91 @@
+{
+  "media": {
+    "talk": "presenter.mp4",
+    "captions": "captions.json"
+  },
+  "brief": {
+    "schema": "adu-auto-brief/1",
+    "brand": "科技口播",
+    "layout": "portrait",
+    "narrationDuration": 11.333333333333334,
+    "allowedStyles": [
+      "01-D"
+    ],
+    "fontPolicy": "preferred",
+    "repairPolicy": {
+      "mode": "off"
+    },
+    "presenterLabel": "口播现场",
+    "contentEvidence": {
+      "schema": "adu-content-evidence/1",
+      "text": "马斯克曾说2026年是AI全面普及的起点不是某个技术突破而是交互革命的铺开很多人觉得遥远但国产AI的行动来得更快",
+      "textSha256": "f0db480348f7ffdf6812fbf852320bf4c43cb7e4acd1ed269c20836236283bd4",
+      "sourceKind": "Actual narration with preserved original ASR word times",
+      "units": [
+        {
+          "id": "f0db480348f7ffdf:0:56",
+          "start": 0,
+          "end": 56,
+          "text": "马斯克曾说2026年是AI全面普及的起点不是某个技术突破而是交互革命的铺开很多人觉得遥远但国产AI的行动来得更快"
+        }
+      ]
+    },
+    "segments": [
+      {
+        "id": "modern-point-1",
+        "text": "马斯克曾说2026年是AI全面普及的起点不是某个技术突破而是交互革命的铺开很多人觉得遥远但国产AI的行动来得更快",
+        "intent": "basic-summary",
+        "phases": [
+          "entry",
+          "reading"
+        ],
+        "counts": {
+          "items": 1
+        },
+        "durationFrames": 680,
+        "anchors": {
+          "entry": {
+            "frame": 0
+          },
+          "reading": {
+            "frame": 84
+          }
+        },
+        "ownershipRefs": [
+          "f0db480348f7ffdf:0:56"
+        ],
+        "supportingRefs": {
+          "heading": [
+            "f0db480348f7ffdf:0:56"
+          ],
+          "items.0": [
+            "f0db480348f7ffdf:0:56"
+          ]
+        },
+        "preferredScenes": [
+          "01-D:basic-summary"
+        ],
+        "candidates": {
+          "01-D:basic-summary": {
+            "inputs": {
+              "heading": "AI 全面普及",
+              "items": [
+                "2026年是AI全面普及的起点；不是某个技术突破，而是交互革命的铺开。很多人觉得遥远，但国产AI行动更快。"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "music": {
+      "mode": "none"
+    }
+  },
+  "header": {
+    "shortTitle": "AI 交互革命",
+    "source": {
+      "kind": "assistant-summary",
+      "field": "brief.contentEvidence.text"
+    }
+  }
+}

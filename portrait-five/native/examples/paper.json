@@ -1,0 +1,115 @@
+{
+  "media": {
+    "talk": "presenter.mp4",
+    "captions": "captions.json"
+  },
+  "brief": {
+    "schema": "adu-auto-brief/1",
+    "brand": "科技口播",
+    "layout": "portrait",
+    "narrationDuration": 11.333333333333334,
+    "allowedStyles": [
+      "02-P"
+    ],
+    "fontPolicy": "preferred",
+    "repairPolicy": {
+      "mode": "off"
+    },
+    "presenterLabel": "口播现场",
+    "contentEvidence": {
+      "schema": "adu-content-evidence/1",
+      "text": "马斯克曾说2026年是AI全面普及的起点不是某个技术突破而是交互革命的铺开很多人觉得遥远但国产AI的行动来得更快",
+      "textSha256": "f0db480348f7ffdf6812fbf852320bf4c43cb7e4acd1ed269c20836236283bd4",
+      "sourceKind": "Actual narration with preserved original ASR word times",
+      "units": [
+        {
+          "id": "f0db480348f7ffdf:0:56",
+          "start": 0,
+          "end": 56,
+          "text": "马斯克曾说2026年是AI全面普及的起点不是某个技术突破而是交互革命的铺开很多人觉得遥远但国产AI的行动来得更快"
+        }
+      ]
+    },
+    "segments": [
+      {
+        "id": "paper-narration-progress",
+        "text": "马斯克曾说2026年是AI全面普及的起点不是某个技术突破而是交互革命的铺开很多人觉得遥远但国产AI的行动来得更快",
+        "intent": "question-progress-punch",
+        "phases": [
+          "question",
+          "progress",
+          "punch"
+        ],
+        "counts": {},
+        "durationFrames": 680,
+        "anchors": {
+          "question": {
+            "frame": 0
+          },
+          "progress": {
+            "frame": 408
+          },
+          "punch": {
+            "frame": 540
+          }
+        },
+        "ownershipRefs": [
+          "f0db480348f7ffdf:0:56"
+        ],
+        "supportingRefs": {
+          "presenterLabel": [
+            "f0db480348f7ffdf:0:56"
+          ],
+          "question": [
+            "f0db480348f7ffdf:0:56"
+          ],
+          "keyword": [
+            "f0db480348f7ffdf:0:56"
+          ],
+          "reportTag": [
+            "f0db480348f7ffdf:0:56"
+          ],
+          "reportTitle": [
+            "f0db480348f7ffdf:0:56"
+          ],
+          "progressWord": [
+            "f0db480348f7ffdf:0:56"
+          ],
+          "progressNote": [
+            "f0db480348f7ffdf:0:56"
+          ],
+          "progressPercent": [
+            "f0db480348f7ffdf:0:56"
+          ]
+        },
+        "preferredScenes": [
+          "02-P:question-progress-punch"
+        ],
+        "candidates": {
+          "02-P:question-progress-punch": {
+            "inputs": {
+              "presenterLabel": "口播现场",
+              "question": "AI普及有多远？",
+              "keyword": "交互革命",
+              "reportTag": "本期口播 · 进度",
+              "reportTitle": "口播进度",
+              "progressWord": "全文",
+              "progressNote": "很多人觉得遥远，但国产AI行动更快",
+              "progressPercent": 100
+            }
+          }
+        }
+      }
+    ],
+    "music": {
+      "mode": "none"
+    }
+  },
+  "header": {
+    "shortTitle": "AI 交互革命",
+    "source": {
+      "kind": "assistant-summary",
+      "field": "brief.contentEvidence.text"
+    }
+  }
+}

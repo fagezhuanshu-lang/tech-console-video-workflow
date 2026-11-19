@@ -1,4 +1,18 @@
-# 科技控制台 · 竖屏口播
+# 竖屏口播剪辑技能
+
+[安装五款竖屏技能](portrait-five/README.md) · [原作者场景入口](portrait-five/native/README.md) · [复剪验证](portrait-five/docs/验证.md)
+
+**现代图文、纸面透视、深色立体、鲜色角色、活力海报**各有独立技能，可替换人物、原声和字幕。五份审核版镜头表和原作者场景的运行入口都在 `portrait-five/`。
+
+**首次使用**，下载整份仓库，在仓库根目录运行安装命令，再从安装页表格领取所选风格、对应模式的个人模板。审核版与原生场景使用不同的固定版本，可按需要分别领取。
+
+```sh
+python portrait-five/scripts/install.py
+```
+
+安装后可以告诉助手：“用纸面透视剪这段口播，保留我的原声，按说话时刻对齐字幕。” 要使用作者场景，可说：“用纸面透视的原生场景，先给我看镜头预览。” [查看环境要求、个人模板和自测命令](portrait-five/README.md)
+
+## 612 科技控制台
 
 用 adunext 的 MotionGit **612 号原模板**制作 1080×1920、60 fps 中文口播。一次选定本期的真人素材、原声、字幕和镜头表，再决定要哪种成片。
 
@@ -63,4 +77,5 @@ python run.py --original --template "我的612.motion" --source "20261106.mp4" -
 ```
 
 从模板新建实例可能产生轻微画面像素差异。要对认可版做逐字节复验，可将最后一条命令的 `--template "我的612.motion"` 替换为 `--native-render "已确认的612原生输出.mp4" --verify-original`，并使用相同素材、字体和编码环境。[查看两种模式的核验基准](references/verification.md)
+
 

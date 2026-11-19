@@ -1,0 +1,366 @@
+[
+  {
+    "t0": 0,
+    "t1": 1.08,
+    "zh": "马斯克曾说",
+    "en": "Musk once said",
+    "highlight": {
+      "language": "zh",
+      "source": "asr-word-boundaries",
+      "units": [
+        {
+          "text": "马",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "text": "斯",
+          "start": 0.38,
+          "end": 0.515
+        },
+        {
+          "text": "克",
+          "start": 0.52,
+          "end": 0.64
+        },
+        {
+          "text": "曾",
+          "start": 0.665,
+          "end": 0.86
+        },
+        {
+          "text": "说",
+          "start": 0.86,
+          "end": 1.08
+        }
+      ]
+    }
+  },
+  {
+    "t0": 1.4,
+    "t1": 2.56,
+    "zh": "2026年是AI",
+    "en": "2026 is when AI",
+    "highlight": {
+      "language": "zh",
+      "source": "asr-word-boundaries",
+      "units": [
+        {
+          "text": "2",
+          "start": 1.4,
+          "end": 1.48
+        },
+        {
+          "text": "0",
+          "start": 1.48,
+          "end": 1.56
+        },
+        {
+          "text": "2",
+          "start": 1.575,
+          "end": 1.7
+        },
+        {
+          "text": "6",
+          "start": 1.7,
+          "end": 1.84
+        },
+        {
+          "text": "年",
+          "start": 1.855,
+          "end": 2.04
+        },
+        {
+          "text": "是",
+          "start": 2.065,
+          "end": 2.2925
+        },
+        {
+          "text": "A",
+          "start": 2.34,
+          "end": 2.45
+        },
+        {
+          "text": "I",
+          "start": 2.45,
+          "end": 2.56
+        }
+      ]
+    }
+  },
+  {
+    "t0": 2.6125,
+    "t1": 3.96,
+    "zh": "全面普及的起点",
+    "en": "starts reaching everyone.",
+    "highlight": {
+      "language": "zh",
+      "source": "asr-word-boundaries",
+      "units": [
+        {
+          "text": "全",
+          "start": 2.6125,
+          "end": 2.845
+        },
+        {
+          "text": "面",
+          "start": 2.88,
+          "end": 3.06
+        },
+        {
+          "text": "普",
+          "start": 3.065,
+          "end": 3.245
+        },
+        {
+          "text": "及",
+          "start": 3.26,
+          "end": 3.4
+        },
+        {
+          "text": "的",
+          "start": 3.4,
+          "end": 3.54
+        },
+        {
+          "text": "起",
+          "start": 3.555,
+          "end": 3.74
+        },
+        {
+          "text": "点",
+          "start": 3.745,
+          "end": 3.96
+        }
+      ]
+    }
+  },
+  {
+    "t0": 3.965,
+    "t1": 5.52,
+    "zh": "不是某个技术突破",
+    "en": "The change is not a technical breakthrough,",
+    "highlight": {
+      "language": "zh",
+      "source": "asr-word-boundaries",
+      "units": [
+        {
+          "text": "不",
+          "start": 3.965,
+          "end": 4.2
+        },
+        {
+          "text": "是",
+          "start": 4.2,
+          "end": 4.43
+        },
+        {
+          "text": "某",
+          "start": 4.44,
+          "end": 4.63
+        },
+        {
+          "text": "个",
+          "start": 4.64,
+          "end": 4.8
+        },
+        {
+          "text": "技",
+          "start": 4.8,
+          "end": 4.955
+        },
+        {
+          "text": "术",
+          "start": 4.96,
+          "end": 5.1
+        },
+        {
+          "text": "突",
+          "start": 5.115,
+          "end": 5.3
+        },
+        {
+          "text": "破",
+          "start": 5.305,
+          "end": 5.52
+        }
+      ]
+    }
+  },
+  {
+    "t0": 5.84,
+    "t1": 7.32,
+    "zh": "而是交互革命的铺开",
+    "en": "but the spread of an interaction revolution.",
+    "highlight": {
+      "language": "zh",
+      "source": "asr-word-boundaries",
+      "units": [
+        {
+          "text": "而",
+          "start": 5.84,
+          "end": 5.9
+        },
+        {
+          "text": "是",
+          "start": 5.93,
+          "end": 6.075
+        },
+        {
+          "text": "交",
+          "start": 6.08,
+          "end": 6.24
+        },
+        {
+          "text": "互",
+          "start": 6.25,
+          "end": 6.435
+        },
+        {
+          "text": "革",
+          "start": 6.44,
+          "end": 6.605
+        },
+        {
+          "text": "命",
+          "start": 6.62,
+          "end": 6.74
+        },
+        {
+          "text": "的",
+          "start": 6.755,
+          "end": 6.92
+        },
+        {
+          "text": "铺",
+          "start": 6.9225,
+          "end": 7.1075
+        },
+        {
+          "text": "开",
+          "start": 7.1075,
+          "end": 7.32
+        }
+      ]
+    }
+  },
+  {
+    "t0": 7.345,
+    "t1": 8.88,
+    "zh": "很多人觉得遥远",
+    "en": "Many people think it is far away,",
+    "highlight": {
+      "language": "zh",
+      "source": "asr-word-boundaries",
+      "units": [
+        {
+          "text": "很",
+          "start": 7.345,
+          "end": 7.66
+        },
+        {
+          "text": "多",
+          "start": 7.66,
+          "end": 7.97
+        },
+        {
+          "text": "人",
+          "start": 8,
+          "end": 8.2
+        },
+        {
+          "text": "觉",
+          "start": 8.22,
+          "end": 8.36
+        },
+        {
+          "text": "得",
+          "start": 8.36,
+          "end": 8.5
+        },
+        {
+          "text": "遥",
+          "start": 8.51,
+          "end": 8.68
+        },
+        {
+          "text": "远",
+          "start": 8.685,
+          "end": 8.88
+        }
+      ]
+    }
+  },
+  {
+    "t0": 9.2,
+    "t1": 11.3,
+    "zh": "但国产AI的行动来得更快",
+    "en": "but Chinese AI is moving faster.",
+    "highlight": {
+      "language": "zh",
+      "source": "asr-word-boundaries",
+      "units": [
+        {
+          "text": "但",
+          "start": 9.2,
+          "end": 9.3
+        },
+        {
+          "text": "国",
+          "start": 9.33,
+          "end": 9.515
+        },
+        {
+          "text": "产",
+          "start": 9.52,
+          "end": 9.6925
+        },
+        {
+          "text": "A",
+          "start": 9.72,
+          "end": 9.81
+        },
+        {
+          "text": "I",
+          "start": 9.81,
+          "end": 9.9
+        },
+        {
+          "text": "的",
+          "start": 9.9375,
+          "end": 10.12
+        },
+        {
+          "text": "行",
+          "start": 10.14,
+          "end": 10.3
+        },
+        {
+          "text": "动",
+          "start": 10.3,
+          "end": 10.46
+        },
+        {
+          "text": "来",
+          "start": 10.475,
+          "end": 10.655
+        },
+        {
+          "text": "得",
+          "start": 10.68,
+          "end": 10.8
+        },
+        {
+          "text": "更",
+          "start": 10.81,
+          "end": 10.96
+        },
+        {
+          "text": "快",
+          "start": 11.005,
+          "end": 11.3
+        }
+      ]
+    }
+  }
+]

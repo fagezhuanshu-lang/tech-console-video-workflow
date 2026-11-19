@@ -1,0 +1,223 @@
+{
+  "checkedAt": "2026-11-19",
+  "platform": "Windows",
+  "node": "24.22.1",
+  "python": "3.12.14",
+  "helperVersion": "1.0.0-rc.59",
+  "helperBytes": 898025,
+  "helperSha256": "77dfe906b8cb6b2c766c89fcd7d4e2f2de049542d6fbd5b7b3465c16b9b2d1c6",
+  "method": "Five fresh private work directories, exact original personal packages, bundled helper checked against fixed official HTTPS metadata. No protected-source or validation edits.",
+  "results": [
+    {
+      "template": "modern",
+      "init": 0,
+      "readNativeInputs": 0,
+      "nativeDoctor": 2,
+      "nativeRenderVerified": false
+    },
+    {
+      "template": "paper",
+      "init": 0,
+      "readNativeInputs": 0,
+      "nativeDoctor": 2,
+      "nativeRenderVerified": false
+    },
+    {
+      "template": "dark",
+      "init": 0,
+      "readNativeInputs": 0,
+      "nativeDoctor": 2,
+      "nativeRenderVerified": false
+    },
+    {
+      "template": "character",
+      "init": 0,
+      "readNativeInputs": 0,
+      "nativeDoctor": 2,
+      "nativeRenderVerified": false
+    },
+    {
+      "template": "poster",
+      "init": 0,
+      "readNativeInputs": 0,
+      "nativeDoctor": 2,
+      "nativeRenderVerified": false
+    }
+  ],
+  "error": "MotionGit split-root: path: cache or secret path rejected: 'adapter/__pycache__'",
+  "subsequentNativeStages": "Documented by author; not reached in these executions",
+  "historicalResults": {
+    "dark": {
+      "templateId": 610,
+      "version": "2.7.18-alpha.14",
+      "workflow": "native",
+      "scene": "03-X:universal-summary",
+      "frames": 680,
+      "duration": 11.333333333333334,
+      "sha256": "e1d0407db704c92ca044e1fdce95558b4c7da70a4655aac7729d856e43755451",
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1080,
+          "height": 1920,
+          "avg_frame_rate": "60/1",
+          "duration": "11.333333",
+          "nb_frames": "680"
+        },
+        {
+          "codec_type": "audio",
+          "avg_frame_rate": "0/0",
+          "duration": "11.333333",
+          "nb_frames": "533"
+        }
+      ],
+      "fullDecode": "passed",
+      "audioZeroLagCorrelation": -0.014757182227714103,
+      "nativeRenderVerified": true,
+      "coverage": "One retained native basic expression; does not validate all original scenes.",
+      "audioAlignedCorrelation": 0.9090195234547359,
+      "audioAlignmentSeconds": 0.0049375,
+      "encodedFramesVisuallyChecked": [
+        0.2,
+        1.1,
+        2.8,
+        4.4,
+        5.8,
+        7.5,
+        9.4,
+        11.1
+      ],
+      "paramsFile": "examples/dark.json",
+      "captionsFile": "examples/captions-bilingual-words.json"
+    },
+    "character": {
+      "templateId": 614,
+      "version": "2.7.18-alpha.14",
+      "workflow": "native",
+      "scene": "05-A:universal-summary",
+      "frames": 680,
+      "duration": 11.333333333333334,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "sha256": "3150c940e3db80dad7947b0a6b553a6bdad1d0b0f65f56d0d3473303d50aad18",
+      "fullDecode": "passed",
+      "nativeRenderVerified": true,
+      "audioAlignedCorrelation": 0.896,
+      "audioAlignmentSeconds": 0.005,
+      "nativeSfx": 2,
+      "coverage": "One complete retained basic expression; not all 19 groups. universal-keyword had a missing sfx.json render failure; official fallback font used.",
+      "paramsFile": "examples/character.json",
+      "captionsFile": "examples/captions-bilingual-words.json"
+    },
+    "poster": {
+      "templateId": 624,
+      "version": "2.7.18-alpha.7",
+      "workflow": "native",
+      "scenes": [
+        "06-A:check-glitch",
+        "06-A:making-card"
+      ],
+      "frames": 768,
+      "duration": 12.8,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "sha256": "19b70ea35ddf05d95522e104260f0df9be1449d124b1822770426651a51bdb78",
+      "fullDecode": "passed",
+      "nativeRenderVerified": true,
+      "nativeSfx": 12,
+      "coverage": "Two original choreography groups; not all 25 groups. Full original 11.33-second speech followed by 1.47-second ending.",
+      "paramsFile": "examples/poster.json",
+      "captionsFile": "examples/captions-bilingual-words.json"
+    },
+    "modern": {
+      "templateId": 606,
+      "version": "2.7.18-alpha.14",
+      "workflow": "native",
+      "scene": "01-D:basic-summary",
+      "frames": 680,
+      "duration": 11.333333333333334,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "sha256": "d2584c6651bc54d5746afe78ba4c4dd704d731b4314ff7feaab8cc1a808f449c",
+      "fullDecode": "passed",
+      "nativeRenderVerified": true,
+      "coverage": "Single native basic-summary group; not full 26-group choreography coverage",
+      "audioClock": {
+        "mode": "none",
+        "voiceRetimed": false,
+        "cutsApplied": false,
+        "playbackRateChanged": false,
+        "narrationClock": "edited-narration"
+      },
+      "nativeSfx": 2,
+      "paramsFile": "examples/modern.json",
+      "captionsFile": "examples/modern-captions.json"
+    },
+    "paper": {
+      "templateId": 608,
+      "version": "2.7.18-alpha.14",
+      "workflow": "native",
+      "scene": "02-P:question-progress-punch",
+      "frames": 680,
+      "duration": 11.333333,
+      "width": 1080,
+      "height": 1920,
+      "fps": 60,
+      "sha256": "fe9279cbf1325e5d19ce2718d9d722e937f870375ac21ff97de030b164bf48ec",
+      "audioAlignedCorrelation": 0.9111,
+      "audioAlignmentSeconds": 0.0049375,
+      "nativeSfx": 17,
+      "fullDecode": "passed",
+      "nativeRenderVerified": true,
+      "coverage": "One paper-perspective native scene. Latest .15 native doctor, .14 cross-scene WAV preparation and gallery image binding failed independently.",
+      "paramsFile": "examples/paper.json",
+      "captionsFile": "examples/modern-captions.json"
+    }
+  },
+  "portablePipelineTest": {
+    "style": "dark",
+    "version": "2.7.18-alpha.14",
+    "stages": [
+      "verified-init",
+      "doctor/setup",
+      "plan-ready",
+      "explicit-plan-review",
+      "preview",
+      "explicit-preview-review",
+      "render",
+      "ffprobe",
+      "full-decode"
+    ],
+    "inputCollision": "Identical presenter and captions in --inputs accepted by SHA256 comparison",
+    "resume": "Missing npm was supplied on resume, original job preserved",
+    "result": {
+      "workflow": "native",
+      "template": "dark",
+      "version": "2.7.18-alpha.14",
+      "sha256": "f67d1f2a45807b5c4018c4b3421b0b1eb7118eba93682ccbefeb9e6625b17059",
+      "width": 1080,
+      "height": 1920,
+      "frames": 680,
+      "fps": 60,
+      "duration": 11.333333,
+      "audioPresent": true,
+      "fullDecode": "passed",
+      "reviewScope": "Plan and preview were explicitly approved; final artistic/audio listening review remains with the user or assistant."
+    },
+    "installation": {
+      "oneInstallerInvocation": true,
+      "installedSkills": [
+        "motiongit-modern",
+        "motiongit-paper",
+        "motiongit-dark",
+        "motiongit-character",
+        "motiongit-poster"
+      ],
+      "independentPipelineHelp": "passed for all five",
+      "captionFixture": "present for all five"
+    }
+  }
+}
