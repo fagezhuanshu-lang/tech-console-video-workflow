@@ -1,0 +1,208 @@
+{
+  "workflow": "motion-kit",
+  "timeline": {
+    "layout": "portrait",
+    "aspect": "9:16",
+    "duration": 11.333333333333334,
+    "sourceStart": 0,
+    "presenter": {
+      "src": "media/presenter.mp4",
+      "audio": "mute",
+      "framing": "auto"
+    },
+    "voiceover": "media/voice.wav",
+    "subtitles": "",
+    "music": "",
+    "captions": [
+      {
+        "s": 0,
+        "e": 1.08,
+        "text": "马斯克曾说"
+      },
+      {
+        "s": 1.4,
+        "e": 2.56,
+        "text": "2026年是AI"
+      },
+      {
+        "s": 2.61,
+        "e": 3.96,
+        "text": "全面普及的起点"
+      },
+      {
+        "s": 3.96,
+        "e": 5.52,
+        "text": "不是某个技术突破"
+      },
+      {
+        "s": 5.84,
+        "e": 7.32,
+        "text": "而是交互革命的铺开"
+      },
+      {
+        "s": 7.34,
+        "e": 8.88,
+        "text": "很多人觉得遥远"
+      },
+      {
+        "s": 9.2,
+        "e": 11.3,
+        "text": "但国产AI的行动来得更快"
+      }
+    ],
+    "segments": [
+      {
+        "control": "title",
+        "variant": "split",
+        "t0": 0,
+        "t1": 3.96,
+        "props": {
+          "kicker": "马斯克曾说",
+          "line1": "2026年",
+          "line2": "AI 全面普及的起点"
+        },
+        "presenter": "card",
+        "transition": "cut",
+        "styleProfile": "console"
+      },
+      {
+        "control": "keyword",
+        "variant": "focus",
+        "t0": 3.96,
+        "t1": 7.34,
+        "props": {
+          "kicker": "不是某个技术突破",
+          "word": "交互革命"
+        },
+        "presenter": "small",
+        "transition": "wipe",
+        "styleProfile": "console"
+      },
+      {
+        "control": "quote",
+        "variant": "reveal",
+        "t0": 7.34,
+        "t1": 11.333333333333334,
+        "props": {
+          "text": "很多人觉得遥远\n但国产 AI 的行动来得更快"
+        },
+        "presenter": "card",
+        "transition": "cut",
+        "styleProfile": "console"
+      }
+    ],
+    "narrationMap": [
+      {
+        "shot": 0,
+        "start": 0,
+        "end": 3.96,
+        "spokenText": "马斯克曾说，2026年是AI，全面普及的起点",
+        "purpose": "neutral-emphasis",
+        "timingSource": "provided-captions",
+        "captionBinding": "continuous",
+        "captionIndices": [
+          0,
+          1,
+          2
+        ],
+        "beats": [
+          {
+            "at": 0,
+            "until": 1.08,
+            "spokenText": "马斯克曾说",
+            "timing": "sentence",
+            "target": "kicker"
+          },
+          {
+            "at": 1.4,
+            "until": 2.56,
+            "spokenText": "2026年是AI",
+            "timing": "sentence",
+            "target": "line1"
+          },
+          {
+            "at": 2.61,
+            "until": 3.96,
+            "spokenText": "全面普及的起点",
+            "timing": "sentence",
+            "target": "line2"
+          }
+        ]
+      },
+      {
+        "shot": 1,
+        "start": 3.96,
+        "end": 7.34,
+        "spokenText": "不是某个技术突破，而是交互革命的铺开",
+        "purpose": "neutral-emphasis",
+        "timingSource": "provided-captions",
+        "captionBinding": "continuous",
+        "captionIndices": [
+          3,
+          4
+        ],
+        "beats": [
+          {
+            "at": 3.96,
+            "until": 5.52,
+            "spokenText": "不是某个技术突破",
+            "timing": "sentence",
+            "target": "kicker"
+          },
+          {
+            "at": 5.84,
+            "until": 7.32,
+            "spokenText": "而是交互革命的铺开",
+            "timing": "sentence",
+            "target": "word"
+          }
+        ]
+      },
+      {
+        "shot": 2,
+        "start": 7.34,
+        "end": 11.333333333333334,
+        "spokenText": "很多人觉得遥远，但国产AI的行动来得更快",
+        "purpose": "neutral-emphasis",
+        "timingSource": "provided-captions",
+        "captionBinding": "continuous",
+        "captionIndices": [
+          5,
+          6
+        ],
+        "beats": [
+          {
+            "at": 7.34,
+            "until": 8.88,
+            "spokenText": "很多人觉得遥远",
+            "timing": "sentence",
+            "target": "text"
+          },
+          {
+            "at": 9.2,
+            "until": 11.3,
+            "spokenText": "但国产AI的行动来得更快",
+            "timing": "sentence",
+            "target": "text"
+          }
+        ]
+      }
+    ],
+    "styleProfile": "console",
+    "ending": "cut",
+    "hud": false,
+    "captionAlignment": "frame-center",
+    "captionLayout": "balanced-lines/1",
+    "narrationComposition": "readable/1",
+    "narrationLayout": "balanced",
+    "narrationVisualMode": "follow-speech",
+    "language": "zh",
+    "header": {
+      "shortTitle": "AI 交互革命",
+      "source": {
+        "kind": "assistant-summary",
+        "field": "timeline.captions"
+      }
+    }
+  }
+}

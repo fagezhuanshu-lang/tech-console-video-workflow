@@ -1,0 +1,16 @@
+node_modules/
+__pycache__/
+*.motion
+.env*
+work/
+output/
+outputs/
+private/
+node_cache/
+*.log
+*.wav
+*.m4a
+*.mp4
+*.ttf
+*.ttc
+*.otf

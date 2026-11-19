@@ -1,0 +1,17 @@
+{
+  "kicker": "运行检查",
+  "line1": "科技控制台",
+  "line2": "竖屏运行检查",
+  "deck": "检查画面、字幕和节拍",
+  "card": "运行检查",
+  "claim": "声画同步",
+  "caption": "动态测试图",
+  "footer": "科技控制台 · 竖屏",
+  "frameSeconds": 4.46,
+  "crop": {
+    "left": 160,
+    "top": 360,
+    "width": 760,
+    "height": 1090
+  }
+}
