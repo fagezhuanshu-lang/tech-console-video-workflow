@@ -10,6 +10,7 @@ import subprocess
 import sys
 
 from story import build
+from scripts.finish import decoded_hashes
 
 ROOT = Path(__file__).resolve().parent
 REFERENCE = ROOT / "examples" / "reference-params.json"
@@ -25,6 +26,8 @@ def file_hash(filename):
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--mode", choices=("approved", "native"), default="approved",
+                   help="Approved cover and music mix (default), or the verified native template output")
     p.add_argument("--source",required=True,type=Path)
     native_input=p.add_mutually_exclusive_group(required=True)
     native_input.add_argument("--template",type=Path,help="Your own signed MotionGit #612 package")
@@ -40,22 +43,28 @@ def main():
     plan.add_argument("--params",type=Path,help="An authored motion-kit plan")
     p.add_argument("--srt",type=Path,help="Proofread subtitles matching --story")
     p.add_argument("--cover-brief",type=Path,help="Cover wording and source portrait crop for this episode")
-    p.add_argument("--music-start",type=float,default=0)
+    p.add_argument("--music-start",type=float)
     p.add_argument("--cache",type=Path,help="Optional location of the official helper runtime cache")
     p.add_argument("--verify-original",action="store_true",help="Fail unless final file exactly matches the approved MP4")
     args=p.parse_args()
-    if not (args.music or args.bed or args.demo_music):
+    approved = args.mode == "approved"
+    if not approved:
+        if not args.template:
+            p.error("Native mode requires --template to render the official 612 package")
+        if args.music or args.bed or args.demo_music or args.music_start is not None or args.cover_brief or args.verify_original:
+            p.error("Native mode delivers the direct template output. Cover, music and --verify-original options apply to approved mode.")
+    elif not (args.music or args.bed or args.demo_music):
         p.error("Choose --music, --bed or --demo-music")
     for key in ("source","template","native_render","story","params","srt","cover_brief","music","bed"):
         value=getattr(args,key)
         if value and not value.is_file(): p.error("Missing file: "+str(value))
     if args.original and file_hash(args.source)!=ORIGINAL_VIDEO:
-        p.error("Different source. Use --story / --srt / --cover-brief for your own video.")
+        p.error("Different source. Use --story with --srt, or --params, for your own video.")
     if args.original and args.native_render and file_hash(args.native_render)!="08b44ceac7ec147a66cc45e8309d98f113d58e5f2cd87a324919550991126e42":
         p.error("--original with --native-render requires the approved 612 native export.")
     if args.verify_original and (not args.original or args.demo_music):
         p.error("--verify-original needs --original with the matching music source or prepared bed.")
-    if not args.original and not args.cover_brief: p.error("Supply --cover-brief for a new episode")
+    if approved and not args.original and not args.cover_brief: p.error("Supply --cover-brief for a new episode")
     if args.story and not args.srt: p.error("--story requires --srt")
     if args.srt and not args.story: p.error("--srt is used with --story")
     if args.music_start and not args.music: p.error("--music-start applies only to --music")
@@ -71,7 +80,7 @@ def main():
                    "-of","default=noprint_wrappers=1:nokey=1",args.native_render],stdout=subprocess.PIPE,text=True)
         if abs(int(probe.stdout.strip())-duration*60)>1:
             p.error("The approved native render duration does not match this episode plan")
-    if not (ROOT/"cover/node_modules/sharp").is_dir():
+    if approved and not (ROOT/"cover/node_modules/sharp").is_dir():
         npm=shutil.which("npm.cmd" if os.name=="nt" else "npm")
         if not npm: p.error("Install Node.js with npm, then run npm ci --prefix cover")
         run([npm,"ci","--prefix",ROOT/"cover","--no-fund","--no-audit"])
@@ -87,21 +96,42 @@ def main():
     if args.demo_music:
         music=private/"demo-music.wav"
         run([sys.executable,ROOT/"examples/make_music.py",music,"--seconds",str(max(8,math.ceil(duration)+2))])
-    music_args=["--bed",args.bed] if args.bed else ["--music",music,"--music-start",args.music_start]
-    run([sys.executable,ROOT/"media.py","--video",args.source,"--out",media,"--duration",duration,*music_args])
-    run(["node",ROOT/"cover/render.mjs",args.source,brief,work/"cover"])
+    if approved:
+        media_options=["--bed",args.bed] if args.bed else ["--music",music,"--music-start",args.music_start or 0]
+    else:
+        media_options=["--presenter-only"]
+    run([sys.executable,ROOT/"media.py","--video",args.source,"--out",media,"--duration",duration,*media_options])
+    if approved:
+        run(["node",ROOT/"cover/render.mjs",args.source,brief,work/"cover"])
     native=private/"native"
     cache=["--cache",args.cache] if args.cache else []
     if args.template:
-        run([sys.executable,ROOT/"scripts/native.py","--package",args.template,"--params",params_file,
-             "--presenter",media/"presenter.mp4","--voice",media/"voice.wav","--work",native,*cache])
+        result=run([sys.executable,ROOT/"scripts/native.py","--package",args.template,"--params",params_file,
+                    "--presenter",media/"presenter.mp4","--voice",media/"voice.wav","--work",native,*cache],
+                   stdout=subprocess.PIPE,text=True)
+        receipt=json.loads(result.stdout)
     picture=args.native_render or native/"native.mp4"
     final=work/"video.mp4"
-    verify=["--expected-sha256",ORIGINAL_MP4] if args.verify_original else []
-    result=run([sys.executable,ROOT/"scripts/finish.py","--native",picture,"--cover",work/"cover/cover-9x16.png",
-                "--music-bed",media/"music-bed.wav","--output",final,*verify],
-               stdout=subprocess.PIPE,text=True)
-    report=json.loads(result.stdout)
+    native_sha=receipt["sha256"] if args.template else file_hash(picture)
+    if approved:
+        verify=["--expected-sha256",ORIGINAL_MP4] if args.verify_original else []
+        result=run([sys.executable,ROOT/"scripts/finish.py","--native",picture,"--cover",work/"cover/cover-9x16.png",
+                    "--music-bed",media/"music-bed.wav","--output",final,*verify],
+                   stdout=subprocess.PIPE,text=True)
+        report=json.loads(result.stdout)
+    else:
+        pending=private/"native-delivery.tmp.mp4"
+        shutil.copyfile(picture,pending)
+        delivery_sha=file_hash(pending)
+        if delivery_sha!=native_sha:
+            raise ValueError("Native delivery differs from the official render receipt")
+        hashes=decoded_hashes(pending,"ffmpeg").splitlines()
+        frames=receipt["frames"]
+        report={"frames":frames,"fps":"60","duration":frames/60,"decode":"ok",
+                "sha256":delivery_sha,"decoded_stream_hashes":hashes}
+        pending.replace(final)
+    report.update(mode=args.mode, native_source="official-render" if args.template else "supplied-export",
+                  native_sha256=native_sha)
     if args.srt: shutil.copyfile(args.srt,work/"captions.srt")
     elif args.original: shutil.copyfile(ROOT/"examples/reference.srt",work/"captions.srt")
     else:

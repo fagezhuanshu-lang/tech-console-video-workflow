@@ -117,7 +117,8 @@ def main():
     choice = parser.add_mutually_exclusive_group(required=True)
     choice.add_argument("--music", type=Path, help="Original licensed music file. The reference M4A starts at zero.")
     choice.add_argument("--bed", type=Path, help="Finished music bed, already ducked and faded. No further gain or fade.")
-    parser.add_argument("--out", "--output", type=Path, required=True, help="New directory for the three inputs.")
+    choice.add_argument("--presenter-only", action="store_true", help="Prepare the presenter and original voice for the native renderer.")
+    parser.add_argument("--out", "--output", type=Path, required=True, help="New directory for the prepared inputs.")
     parser.add_argument("--start", type=float, default=0, help="Video start in seconds.")
     parser.add_argument("--duration", type=Fraction, default=Fraction(340, 30), help="Seconds; must align to 30 fps (e.g. 340/30).")
     parser.add_argument("--music-start", type=float, default=0, help="Offset into supplied music or finished bed.")
@@ -126,6 +127,8 @@ def main():
     args = parser.parse_args()
     if not all(math.isfinite(v) and v >= 0 for v in (args.start, args.music_start)):
         parser.error("Offsets must be finite and nonnegative.")
+    if args.presenter_only and args.music_start:
+        parser.error("--music-start requires a music file.")
     exact = args.duration * 30
     frames = round(exact)
     # This workflow uses the motion-kit timeline.duration contract.
@@ -136,8 +139,8 @@ def main():
     music_file = args.music or args.bed
     if args.out.exists():
         parser.error("Output directory already exists; supply a new directory.")
-    if not args.video.is_file() or not music_file.is_file():
-        parser.error("The source video and music files must both exist.")
+    if not args.video.is_file() or (music_file and not music_file.is_file()):
+        parser.error("Missing source video or music file.")
     streams = probe(args.ffprobe, args.video)
     video = next((s for s in streams if s["codec_type"] == "video"), None)
     if not video or not any(s["codec_type"] == "audio" for s in streams):
@@ -148,7 +151,8 @@ def main():
         stage = scratch / "prepared"
         stage.mkdir()
         seek = [] if args.start == 0 else ["-ss", str(args.start)]
-        video_sha, music_sha = digest(args.video), digest(music_file)
+        video_sha = digest(args.video)
+        music_sha = digest(music_file) if music_file else None
         filters = "fps=30,setsar=1"
         if (video["width"], video["height"]) != (1080, 1920) or video.get("sample_aspect_ratio", "1:1") not in ("1:1", "N/A"):
             filters = "fps=30,scale=1080:1920:force_original_aspect_ratio=decrease:force_divisible_by=2:reset_sar=1,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,setsar=1"
@@ -158,27 +162,30 @@ def main():
             "-t", duration, "-vf", filters, "-c:v", "libx264", "-preset", "veryfast", "-crf", "17",
             "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "256k", "-ar", "48000", "-movflags", "+faststart",
             presenter, "-map", "0:a:0", "-t", duration, "-vn", "-c:a", "pcm_s16le", "-ar", "48000", voice)
-        if args.music:
-            music_input = raw_music(args, music_file, scratch, seek, samples, duration, video_sha, music_sha)
-            end = frames/30
-            curve = f"atrim=end={duration},asetpts=PTS-STARTPTS,afade=t=out:st={end - .753333333333:.5f}:d=0.75333"
-        else:
-            excerpt = ["-ss", str(args.music_start)] if args.music_start else []
-            music_input = [*excerpt, "-i", args.bed]
-            curve = f"atrim=end={duration},asetpts=PTS-STARTPTS"
-        bed = stage / "music-bed.wav"
-        run(args.ffmpeg, *music_input, "-map", "0:a:0", "-af", curve, "-c:a", "pcm_s24le", "-ar", "48000", "-ac", "2", bed)
+        audio_inputs = [voice]
+        if music_file:
+            if args.music:
+                music_input = raw_music(args, music_file, scratch, seek, samples, duration, video_sha, music_sha)
+                end = frames/30
+                curve = f"atrim=end={duration},asetpts=PTS-STARTPTS,afade=t=out:st={end - .753333333333:.5f}:d=0.75333"
+            else:
+                excerpt = ["-ss", str(args.music_start)] if args.music_start else []
+                music_input = [*excerpt, "-i", args.bed]
+                curve = f"atrim=end={duration},asetpts=PTS-STARTPTS"
+            bed = stage / "music-bed.wav"
+            run(args.ffmpeg, *music_input, "-map", "0:a:0", "-af", curve, "-c:a", "pcm_s24le", "-ar", "48000", "-ac", "2", bed)
+            audio_inputs.append(bed)
         picture = next(s for s in probe(args.ffprobe, presenter) if s["codec_type"] == "video")
         if int(picture.get("nb_frames", -1)) != frames:
             raise ValueError("Source picture does not cover the requested excerpt.")
-        for wav in (bed, voice):
+        for wav in audio_inputs:
             actual = probe(args.ffprobe, wav)[0]
             tolerance = 2 if wav == voice else 0
             if abs(int(actual["duration_ts"])-samples) > tolerance:
                 raise ValueError(f"{wav.name} is shorter than the requested time range.")
         stage.rename(args.out)
     print(json.dumps({"frames": frames, "duration": duration, "source_sha256": video_sha, "music_sha256": music_sha,
-                      "inputs": ["presenter.mp4", "voice.wav", "music-bed.wav"]}))
+                      "inputs": [presenter.name, *(wav.name for wav in audio_inputs)]}))
 
 
 if __name__ == "__main__":
