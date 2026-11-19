@@ -1,0 +1,17 @@
+{
+  "kicker": "科技口播",
+  "line1": "AI怎么普及",
+  "line2": "从交互说起",
+  "deck": "为什么这一次变化来得更快？",
+  "card": "观察角度",
+  "claim": "交互方式",
+  "caption": "口播现场",
+  "footer": "科技控制台 · 竖屏",
+  "frameSeconds": 4.46,
+  "crop": {
+    "left": 160,
+    "top": 360,
+    "width": 760,
+    "height": 1090
+  }
+}

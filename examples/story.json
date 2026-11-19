@@ -1,0 +1,30 @@
+{
+  "duration": 11.333333333333334,
+  "header": "AI 交互革命",
+  "scenes": [
+    {
+      "throughCaption": 3,
+      "control": "title",
+      "props": {
+        "kicker": "马斯克曾说",
+        "line1": "2026年",
+        "line2": "AI 全面普及的起点"
+      }
+    },
+    {
+      "throughCaption": 5,
+      "control": "keyword",
+      "props": {
+        "kicker": "不是某个技术突破",
+        "word": "交互革命"
+      }
+    },
+    {
+      "throughCaption": 7,
+      "control": "quote",
+      "props": {
+        "text": "很多人觉得遥远\n但国产 AI 的行动来得更快"
+      }
+    }
+  ]
+}
